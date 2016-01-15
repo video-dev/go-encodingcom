@@ -11,7 +11,6 @@ import (
 	"net/http"
 	"net/url"
 	"strings"
-	"time"
 )
 
 // Client is the basic type for interacting with the API. It provides methods
@@ -114,20 +113,6 @@ type SplitScreen struct {
 	PaddingRight  int `json:"padding_right,string,omitempty"`
 	PaddingBottom int `json:"padding_bottom,string,omitempty"`
 	PaddingTop    int `json:"padding_top,string,omitempty"`
-}
-
-// GetMediaListResponse represents the response returned by the GetMediaList action.
-//
-// See http://goo.gl/J8uncc for more details.
-type GetMediaListResponse struct {
-	Media []struct {
-		MediaFile   string    `json:"mediafile,omitempty"`
-		MediaID     string    `json:"mediaid,omitempty"`
-		MediaStatus string    `json:"mediastatus,omitempty"`
-		CreatedDate time.Time `json:"createdate,string,omitempty"`
-		StartDate   time.Time `json:"startdate,string,omitempty"`
-		FinishDate  time.Time `json:"finishdate,string,omitempty"`
-	}
 }
 
 // Format is the set of options for defining the output format when encoding
